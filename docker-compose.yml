@@ -2,7 +2,8 @@ version: '3.8'
 
 services:
   mongodb:
-    image: mongo:7.0-alpine
+    image: mongo:7
+    # image: mongo:7.0-alpine - I am using mongo:7 instead of this because when i ran this, i was behind a firewall
     container_name: webflux-mongo
     ports:
       - "27017:27017"
