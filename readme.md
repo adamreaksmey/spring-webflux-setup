@@ -42,23 +42,29 @@ DELETE /api/users/{id}      - Delete user
 ## Project Structure
 
 ```
-src/main/java/com/example/
-├── model/           - User domain model
-├── repository/      - Reactive data access
-├── service/         - Business logic with Mono/Flux
-├── controller/      - REST endpoints
-└── exception/       - Global error handling
+src/main/java/com/example/webflux/
+├── WebfluxApplication.java          Main entry point
+├── model/
+│   └── User.java                    Domain model with validation
+├── repository/
+│   └── UserRepository.java          Reactive MongoDB data access
+├── service/
+│   └── UserService.java             Business logic with Mono/Flux chains
+├── controller/
+│   └── UserController.java          REST endpoints
+└── exception/
+    └── GlobalExceptionHandler.java  Global error handling
 ```
 
-## Key Concepts
+## Key Concepts Demonstrated
 
-This example demonstrates:
-- **Mono & Flux**: Non-blocking streams
-- **flatMap & switchIfEmpty**: Chaining async operations
-- **Reactive error handling**: Using `onErrorResume`
-- **Testing**: WebTestClient for integration tests
+- **Mono & Flux**: Non-blocking streams that describe async operations
+- **flatMap & switchIfEmpty**: Chaining reactive operations together
+- **Error handling**: Using `onErrorResume` and custom exception handlers
+- **Validation**: Bean validation with `@Valid` and `@NotBlank`, `@Email`
+- **Testing**: Integration tests with `WebTestClient`
 
-See the blog for detailed explanations and common pitfalls to avoid.
+See the blog post for detailed explanations and common pitfalls to avoid.
 
 ## Running Tests
 
@@ -66,4 +72,8 @@ See the blog for detailed explanations and common pitfalls to avoid.
 mvn test
 ```
 
-Uses embedded MongoDB for isolation.
+Uses embedded MongoDB for test isolation.
+
+## Deployment
+
+The included `Dockerfile` and `docker-compose.yml` handle everything. No manual setup needed.
