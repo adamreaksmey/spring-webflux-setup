@@ -3,7 +3,7 @@
 A practical example of building a **reactive, non-blocking REST API** with **Spring WebFlux** and **MongoDB**.
 No env needed for this simple crud app, so dont worry about it.
 
-> 💡 For a deeper dive into when and why to use WebFlux, [read the full blog post](link-to-your-blog).
+> 💡 For a deeper dive into when and why to use WebFlux, [read the full blog post](https://dev.to/adamthedeveloper/spring-webflux-when-to-use-it-and-how-to-build-with-it-5a6e).
 
 ---
 
